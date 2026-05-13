@@ -14,7 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.studyapp.model.Task;
 import com.example.studyapp.service.TaskService;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {
+    "http://localhost:3000",
+    "https://study-management-app.netlify.app"
+})
 @RestController
 public class TaskController {
 

@@ -8,7 +8,8 @@ export default function Home() {
   const [filter, setFilter] = useState("all");
 
   const fetchTasks = async () => {
-    const res = await fetch("http://localhost:8080/tasks");
+    // const res = await fetch("http://localhost:8080/tasks"); ローカルで動かすときはこっち
+    const res = await fetch("https://study-management-app.onrender.com/tasks");
     const data = await res.json();
     setTasks(data);
   };
@@ -19,7 +20,8 @@ export default function Home() {
 
   const addTask = async () => {
     if (!title.trim()) return;
-    await fetch("http://localhost:8080/tasks", {
+    // const res = await fetch("http://localhost:8080/tasks", {　ローカルで動かすときはこっち
+    const res = await fetch("https://study-management-app.onrender.com/tasks", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -36,7 +38,8 @@ export default function Home() {
   };
 
   const toggleTask = async (id) => {
-    await fetch(`http://localhost:8080/tasks/${id}`, {
+    // const res = await fetch(`http://localhost:8080/tasks/${id}`, {　ローカルで動かすときはこっち
+    const res = await fetch(`https://study-management-app.onrender.com/tasks/${id}`, {
       method: "PUT",
     });
 
@@ -44,7 +47,8 @@ export default function Home() {
   };
 
   const deleteTask = async (id) => {
-    await fetch(`http://localhost:8080/tasks/${id}`, {
+    // const res = await fetch(`http://localhost:8080/tasks/${id}`, {　ローカルで動かすときはこっち
+    const res = await fetch(`https://study-management-app.onrender.com/tasks/${id}`, {
       method: "DELETE",
     });
 
