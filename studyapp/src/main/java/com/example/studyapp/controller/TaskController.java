@@ -16,7 +16,7 @@ import com.example.studyapp.service.TaskService;
 
 @CrossOrigin(origins = {
     "http://localhost:3000",
-    "https://study-management-app.netlify.app"
+    "https://playful-caramel-daefe7.netlify.app"
 })
 @RestController
 public class TaskController {
